@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.expand-card-container {
+    display: flex;
+    width: 90vw;
+}
+
+.card-panel {
+    /* margin: .5rem; */
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+.card-panel h3 {
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.card-panel.active {
+    flex: 5;
+}
+
+.card-panel.active h3 {
+    opacity: 1;
+}
+
+
+@media (max-width:480px) {
+    .expand-card-container {
+        width: 100vw;
+    }
+
+    .card-panel:nth-of-type(4),
+    .card-panel:nth-of-type(5) {
+        display: none;
+    }
+}
